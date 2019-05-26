@@ -1,0 +1,55 @@
+﻿@model EuroSociedades.Models.Jogadores
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Apagar Jogador</h2>
+
+<h3>Tem a certeza que pretende apagar estes dados?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Apagar" class="btn btn-default" /> |
+            @Html.ActionLink("Lista de Jogadores", "Index")
+        </div>
+    }
+</div>

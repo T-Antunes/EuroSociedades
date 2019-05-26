@@ -168,8 +168,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApostasController.cs" />
+    <Compile Include="Controllers\ChavesController.cs" />
+    <Compile Include="Controllers\ConcursosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JogadoresController.cs" />
+    <Compile Include="Controllers\Jog_SocController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PagamentosController.cs" />
+    <Compile Include="Controllers\SociedadesController.cs" />
+    <Compile Include="Controllers\TipoChavesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -177,6 +185,7 @@
     <Compile Include="Models\Apostas.cs" />
     <Compile Include="Models\Chaves.cs" />
     <Compile Include="Models\Concursos.cs" />
+    <Compile Include="Models\EurosociDB.cs" />
     <Compile Include="Models\Jogadores.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Jog_Soc.cs" />
@@ -245,6 +254,46 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Jogadores\Create.cshtml" />
+    <Content Include="Views\Jogadores\Delete.cshtml" />
+    <Content Include="Views\Jogadores\Details.cshtml" />
+    <Content Include="Views\Jogadores\Edit.cshtml" />
+    <Content Include="Views\Jogadores\Index.cshtml" />
+    <Content Include="Views\Sociedades\Create.cshtml" />
+    <Content Include="Views\Sociedades\Delete.cshtml" />
+    <Content Include="Views\Sociedades\Details.cshtml" />
+    <Content Include="Views\Sociedades\Edit.cshtml" />
+    <Content Include="Views\Sociedades\Index.cshtml" />
+    <Content Include="Views\Apostas\Create.cshtml" />
+    <Content Include="Views\Apostas\Delete.cshtml" />
+    <Content Include="Views\Apostas\Details.cshtml" />
+    <Content Include="Views\Apostas\Edit.cshtml" />
+    <Content Include="Views\Apostas\Index.cshtml" />
+    <Content Include="Views\TipoChaves\Create.cshtml" />
+    <Content Include="Views\TipoChaves\Delete.cshtml" />
+    <Content Include="Views\TipoChaves\Details.cshtml" />
+    <Content Include="Views\TipoChaves\Edit.cshtml" />
+    <Content Include="Views\TipoChaves\Index.cshtml" />
+    <Content Include="Views\Pagamentos\Create.cshtml" />
+    <Content Include="Views\Pagamentos\Delete.cshtml" />
+    <Content Include="Views\Pagamentos\Details.cshtml" />
+    <Content Include="Views\Pagamentos\Edit.cshtml" />
+    <Content Include="Views\Pagamentos\Index.cshtml" />
+    <Content Include="Views\Jog_Soc\Create.cshtml" />
+    <Content Include="Views\Jog_Soc\Delete.cshtml" />
+    <Content Include="Views\Jog_Soc\Details.cshtml" />
+    <Content Include="Views\Jog_Soc\Edit.cshtml" />
+    <Content Include="Views\Jog_Soc\Index.cshtml" />
+    <Content Include="Views\Concursos\Create.cshtml" />
+    <Content Include="Views\Concursos\Delete.cshtml" />
+    <Content Include="Views\Concursos\Details.cshtml" />
+    <Content Include="Views\Concursos\Edit.cshtml" />
+    <Content Include="Views\Concursos\Index.cshtml" />
+    <Content Include="Views\Chaves\Create.cshtml" />
+    <Content Include="Views\Chaves\Delete.cshtml" />
+    <Content Include="Views\Chaves\Details.cshtml" />
+    <Content Include="Views\Chaves\Edit.cshtml" />
+    <Content Include="Views\Chaves\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

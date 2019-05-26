@@ -1,0 +1,51 @@
+﻿@model IEnumerable<EuroSociedades.Models.Chaves>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoChave.Tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Preco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numeros)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estrelas)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoChave.Tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Preco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numeros)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estrelas)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

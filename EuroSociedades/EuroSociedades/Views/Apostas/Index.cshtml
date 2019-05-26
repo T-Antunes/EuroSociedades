@@ -1,0 +1,57 @@
+﻿@model IEnumerable<EuroSociedades.Models.Apostas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Concurso.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sociedade.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataRegisto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorAposta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorPremio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Concurso.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sociedade.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataRegisto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorAposta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorPremio)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

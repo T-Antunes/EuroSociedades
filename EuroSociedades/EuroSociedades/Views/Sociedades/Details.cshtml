@@ -1,0 +1,42 @@
+﻿@model EuroSociedades.Models.Sociedades
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes da Sociedade</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataConstituicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataConstituicao)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Gestor da Sociedade")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gestor.Nome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Lista de Sociedades", "Index")
+</p>

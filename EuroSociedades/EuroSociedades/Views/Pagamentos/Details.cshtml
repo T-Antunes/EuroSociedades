@@ -1,0 +1,42 @@
+﻿@model EuroSociedades.Models.Pagamentos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pagamentos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Jog_Soc.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jog_Soc.ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPagamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataPagamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorPago)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorPago)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

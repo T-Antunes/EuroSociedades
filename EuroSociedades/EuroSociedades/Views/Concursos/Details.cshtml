@@ -1,0 +1,42 @@
+﻿@model EuroSociedades.Models.Concursos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayName("Concurso")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataConcurso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataConcurso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChaveSorteada.Numeros)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChaveSorteada.Numeros)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Lista de Concursos", "Index")
+</p>

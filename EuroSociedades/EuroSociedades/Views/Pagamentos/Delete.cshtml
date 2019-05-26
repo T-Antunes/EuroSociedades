@@ -1,0 +1,48 @@
+﻿@model EuroSociedades.Models.Pagamentos
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Pagamentos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Jog_Soc.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jog_Soc.ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPagamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataPagamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorPago)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorPago)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

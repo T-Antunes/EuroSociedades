@@ -1,0 +1,58 @@
+﻿@model EuroSociedades.Models.Apostas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Apostas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Concurso.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Concurso.ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sociedade.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sociedade.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataRegisto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataRegisto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorAposta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorAposta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorPremio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorPremio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

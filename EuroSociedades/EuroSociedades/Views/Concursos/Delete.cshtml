@@ -1,0 +1,47 @@
+﻿@model EuroSociedades.Models.Concursos
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Tem a certeza que pretende apagar estes dados?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Concurso")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataConcurso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataConcurso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChaveSorteada.Numeros)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChaveSorteada.Numeros)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Lista de Concursos", "Index")
+        </div>
+    }
+</div>
