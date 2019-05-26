@@ -35,7 +35,7 @@ namespace EuroSociedades.Models {
 
         // FK para o Concurso
         [ForeignKey("Concurso")]
-        public string ConcursoFK { get; set; }
+        public int ConcursoFK { get; set; }
         public virtual Concursos Concurso { get; set; }
 
         // FK para a Sociedade

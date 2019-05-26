@@ -15,10 +15,10 @@
             @Html.DisplayName("Concurso")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ChaveSorteada.Numeros)
+            @Html.DisplayNameFor(model => model.DataConcurso)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DataConcurso)
+            @Html.DisplayName("Chave") 
         </th>
         <th></th>
     </tr>
@@ -26,18 +26,20 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChaveSorteada.Numeros)
+            @Html.DisplayFor(modelItem => item.NomeConcurso)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DataConcurso)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Detalhes", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.ID })
+            @if (@item.ChaveFK != null) {
+            <span> @Html.DisplayFor(modelItem => item.ChaveSorteada.Numeros) + @Html.DisplayFor(modelItem => item.ChaveSorteada.Estrelas)</span>
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Detalhes", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.ID })
         </td>
     </tr>
 }

@@ -15,7 +15,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ID)
+            @Html.DisplayFor(model => model.NomeConcurso)
         </dd>
 
         <dt>
@@ -27,11 +27,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ChaveSorteada.Numeros)
+            @Html.DisplayName("Chave Sorteada")
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ChaveSorteada.Numeros)
+            @Html.DisplayFor(model => model.ChaveSorteada.Numeros) + @Html.DisplayFor(model => model.ChaveSorteada.Estrelas)
         </dd>
 
     </dl>

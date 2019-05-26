@@ -8,8 +8,15 @@ namespace EuroSociedades.Models {
     public class Concursos {
 
         [Key] // chave primária
-        [DatabaseGenerated(DatabaseGeneratedOption.None)] // inibe a opção AutoNumber
-        public string ID { get; set; }
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)] // inibe a opção AutoNumber
+        public int ID { get; set; }
+
+        [Required]
+        [Index(IsUnique = true)]
+        [StringLength(8)]
+        [RegularExpression("[01]?[0-9]{2}/20[0-9]{2}", ErrorMessage = "O nome do concurso é do tipo nnn/aaaa, onde nnn é nº do concurso e aaaa o ano do concurso")]
+        [Display(Name = "Concurso")]
+        public string NomeConcurso { get; set; }
 
         [Required]
         [DisplayName("Data do Concurso")]

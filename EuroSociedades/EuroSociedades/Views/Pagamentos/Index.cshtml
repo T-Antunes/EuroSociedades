@@ -4,15 +4,18 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Pagamentos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Adicionar pagamento", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Jog_Soc.ID)
+            @Html.DisplayNameFor(model => model.Jog_Soc.Jogador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Jog_Soc.Sociedade)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DataPagamento)
@@ -26,7 +29,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Jog_Soc.ID)
+            @Html.DisplayFor(modelItem => item.Jog_Soc.Jogador.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Jog_Soc.Sociedade.Nome)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DataPagamento)
@@ -35,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.ValorPago)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Detalhes", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.ID })
         </td>
     </tr>
 }

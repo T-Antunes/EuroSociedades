@@ -22,11 +22,11 @@ namespace EuroSociedades.Controllers
         }
 
         // GET: Concursos/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Index");
             }
             Concursos concursos = db.Concursos.Find(id);
             if (concursos == null)
@@ -39,7 +39,7 @@ namespace EuroSociedades.Controllers
         // GET: Concursos/Create
         public ActionResult Create()
         {
-            ViewBag.ChaveFK = new SelectList(db.Chaves, "ID", "Numeros");
+            ViewBag.ChaveFK = new SelectList(db.Chaves, "ID", "Numeros", "Estrelas");
             return View();
         }
 
@@ -62,7 +62,7 @@ namespace EuroSociedades.Controllers
         }
 
         // GET: Concursos/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
             if (id == null)
             {
@@ -73,7 +73,17 @@ namespace EuroSociedades.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ChaveFK = new SelectList(db.Chaves, "ID", "Numeros", concursos.ChaveFK);
+            //ViewBag.ChaveFK = new SelectList(db.Chaves, "ID", "Numeros", concursos.ChaveFK);
+
+            ViewBag.ChaveFK = new SelectList(
+                from s in db.Chaves
+                select new {
+                    s.ID,
+                    Chave = s.Numeros + " + " + s.Estrelas
+                },
+                "ID",
+                "Chave",
+                concursos.ChaveFK);
             return View(concursos);
         }
 
@@ -95,7 +105,7 @@ namespace EuroSociedades.Controllers
         }
 
         // GET: Concursos/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int id)
         {
             if (id == null)
             {
@@ -112,7 +122,7 @@ namespace EuroSociedades.Controllers
         // POST: Concursos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
             Concursos concursos = db.Concursos.Find(id);
             db.Concursos.Remove(concursos);

@@ -27,5 +27,6 @@ namespace EuroSociedades.Models {
         [ForeignKey("TipoChave")]
         public int TipoChaveFK { get; set; }
         public virtual TipoChaves TipoChave { get; set; }
+
     }
 }
